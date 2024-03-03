@@ -2,9 +2,9 @@
 
 This repository contains the smart contracts for the Bitcoin Price Research Dataset
 
-Serves as a helper to fetch the Bitcoin price only once at a specific timestamp. This functionality is crucial for determining the winner of the Bitcoin Price Research Dataset, where the user closest to the price wins the prize. Fetches and stores the latest price of a specified coin pair, in this case BTC/USD pair using Chainlink Data Feeds.
+Serves as a helper to fetch the Bitcoin price only once at a specific timestamp. This functionality is crucial for determining the winner of the Bitcoin Price Research Dataset, where the user closest to the price wins the prize. Fetches and stores the latest price of a specified coin pair, in this case BTC/USD pair using [Chainlink Data Feeds](https://docs.chain.link/data-feeds#price-feeds).
 
-In addition, the contract ensures that the fetch operation can only be executed once to prevent duplicate price fetching and it's triggered by using a time-based upkeep contract from Chainlink Automation.
+In addition, the contract ensures that the fetch operation can only be executed once to prevent duplicate price fetching and it's triggered by using a time-based upkeep contract from [Chainlink Automation](https://automation.chain.link/).
 
 ---
 
