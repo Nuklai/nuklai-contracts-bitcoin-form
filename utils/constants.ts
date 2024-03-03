@@ -1,3 +1,6 @@
 export const BTC_USD_DATA_FEED_CONTRACT: { [chainId: string]: string } = {
   '43113': '0x31CF013A08c6Ac228C94551d535d5BAfE19c602a',
 };
+
+export const TEST_DATA_FEED_DECIMALS = 8;
+export const TEST_DATA_FEED_INITIAL_ANSWER = 5100012345678;

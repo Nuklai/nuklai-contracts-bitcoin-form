@@ -8,6 +8,7 @@ import 'solidity-coverage';
 import 'hardhat-deploy';
 import 'hardhat-deploy-ethers';
 import 'hardhat-contract-sizer';
+import 'hardhat-dependency-compiler';
 import { network } from './utils';
 
 const config: HardhatUserConfig = {
@@ -53,6 +54,13 @@ const config: HardhatUserConfig = {
   namedAccounts: {
     admin: 0,
     user: 1,
+    chainlink: 2,
+    forwarder: 3,
+    forwarderSecond: 4,
+  },
+  dependencyCompiler: {
+    paths: ['@chainlink/contracts/src/v0.8/tests/MockV3Aggregator.sol'],
+    keep: true,
   },
 };
 

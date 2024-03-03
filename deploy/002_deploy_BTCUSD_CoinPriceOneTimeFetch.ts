@@ -3,6 +3,8 @@ import { DeployFunction } from 'hardhat-deploy/types';
 import { BTC_USD_DATA_FEED_CONTRACT } from '../utils/constants';
 
 const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
+  if (process.env.TEST === 'true') return;
+
   const { deployments, getNamedAccounts, getChainId } = hre;
   const { deploy } = deployments;
 
@@ -17,12 +19,9 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
     args: [btcPriceDataFeed],
   });
 
-  console.log(
-    'BTC/USD CoinPriceOneTimeFetch implementation deployed successfully at',
-    deployedPriceFetch.address
-  );
+  console.log('BTC/USD CoinPriceOneTimeFetch deployed successfully at', deployedPriceFetch.address);
 
-  if (process.env.TEST !== 'true') await hre.run('etherscan-verify');
+  await hre.run('etherscan-verify');
 };
 
 export default func;
